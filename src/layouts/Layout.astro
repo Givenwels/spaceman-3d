@@ -1,0 +1,36 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = 'Lusion - Award Winning 3D and Interactive Web Studio' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>{title}</title>
+  <meta name="description" content="We design and produce 3D visual storytelling, immersive websites, and interactive digital experiences that help brands stand out online." />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content="We design and produce 3D visual storytelling, immersive websites, and interactive digital experiences that help brands stand out online." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="noise-overlay">
+  <canvas id="canvas"></canvas>
+  <div id="ui">
+    <slot />
+  </div>
+  <canvas id="transition-overlay"></canvas>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+  @import '../styles/header.css';
+  @import '../styles/sections.css';
+  @import '../styles/animations.css';
+</style>

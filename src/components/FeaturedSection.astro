@@ -1,0 +1,53 @@
+---
+const projects = [
+  { id: 'oryzo_ai', name: 'Oryzo AI', tags: 'concept • web • design • development • 3d • animation', bg: '#1a1411', text: '#ffedd7' },
+  { id: 'of_the_oak', name: 'Of The Oak', tags: 'web • design • development • 3d • animation', bg: '#111a13', text: '#d9f3de' },
+  { id: 'devin_ai', name: 'Devin AI', tags: 'web • design • development • 3d', bg: '#121414', text: '#ffffff' },
+  { id: 'porsche_dream_machine', name: 'Porsche: Dream Machine', tags: 'concept • 3D illustration • mograph • video', bg: '#EFD5D3', text: '#000000' },
+  { id: 'synthetic_human', name: 'Synthetic Human', tags: 'web • design • development • 3d', bg: '#9d8aff', text: '#ffffff' },
+  { id: 'spatial_fusion', name: 'Meta: Spatial Fusion', tags: 'web • design • development • 3d', bg: '#D6C8ED', text: '#000000' },
+  { id: 'spaace', name: 'Spaace - NFT Marketplace', tags: 'web • design • development • 3d • web3', bg: '#010a16', text: '#ffece2' },
+  { id: 'ddd_2024', name: 'DDD 2024', tags: 'web • design • development • 3d', bg: '#261c46', text: '#ffffff' },
+  { id: 'choo_choo_world', name: 'Choo Choo World', tags: 'concept • web • game design • 3d', bg: '#E8EEF8', text: '#000000' },
+  { id: 'soda_experience', name: 'Soda Experience', tags: 'AR • development • 3d', bg: '#E1E2E4', text: '#000000' },
+];
+---
+<div id="home-featured" class="section">
+  <div id="home-featured-title-top" class="reveal-up">
+    <div id="home-featured-title-wrapper">
+      <h4 id="home-featured-title">Featured Work</h4>
+    </div>
+    <div id="home-featured-disclaimer">A selection of immersive digital experiences created for ambitious brands and forward thinking teams.</div>
+  </div>
+  <div class="project-list stagger-children">
+    {projects.map((project) => (
+      <a
+        class="project-item"
+        href={`/projects/${project.id}`}
+        data-id={project.id}
+        data-color-bg={project.bg}
+        data-color-text={project.text}
+      >
+        <div class="project-item-main">
+          <div class="project-item-image" data-name={project.name}></div>
+        </div>
+        <div class="project-item-footer" style={`background: ${project.bg}; color: ${project.text};`}>
+          <div class="project-item-line-1" style={`color: ${project.text}88;`}>{project.tags}</div>
+          <div class="project-item-line-2">
+            <div class="project-item-line-2-icon" style={`background: ${project.text};`}></div>
+            <div class="project-item-line-2-inner">{project.name}</div>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+  <a id="home-featured-cta" href="/projects" class="reveal-up">
+    <span id="home-featured-cta-dot"></span>
+    <span id="home-featured-cta-text">See all projects</span>
+    <span id="home-featured-cta-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.343 8h11.314m0 0L8.673 3.016M13.657 8l-4.984 4.984"></path>
+      </svg>
+    </span>
+  </a>
+</div>

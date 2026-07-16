@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Preloader from '../components/Preloader.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ReelSection from '../components/ReelSection.astro';
+import FeaturedSection from '../components/FeaturedSection.astro';
+import GoalSection from '../components/GoalSection.astro';
+import EndSection from '../components/EndSection.astro';
+import Footer from '../components/Footer.astro';
+import ScrollNav from '../components/ScrollNav.astro';
+import VideoOverlay from '../components/VideoOverlay.astro';
+import ScrollIndicator from '../components/ScrollIndicator.astro';
+---
+<Layout>
+  <Header />
+  <div id="page-container">
+    <div id="page-container-inner">
+      <div id="home" class="page">
+        <HeroSection />
+        <ReelSection />
+        <FeaturedSection />
+        <GoalSection />
+      </div>
+    </div>
+    <div id="page-extra-sections">
+      <EndSection />
+      <Footer />
+      <ScrollNav />
+    </div>
+  </div>
+  <ScrollIndicator />
+  <VideoOverlay />
+  <Preloader />
+  <script>
+    import '../scripts/main';
+  </script>
+</Layout>
